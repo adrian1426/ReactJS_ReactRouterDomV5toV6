@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes } from "react-router-dom";
 import Proyecto from "./Proyecto";
 
 const Portafolio = () => {
@@ -7,10 +7,20 @@ const Portafolio = () => {
       <h1>Protafolio component</h1>
       <ul>
         <li>
-          <Link to="proyecto1/1">Proyecto 1</Link>
+          <NavLink
+            className={({ isActive }) => "miClassActive"}
+            to="proyecto1/1"
+          >
+            Proyecto 1
+          </NavLink>
         </li>
         <li>
-          <Link to="proyecto1/2">Proyecto 2</Link>
+          <NavLink
+            style={({ isActive }) => ({ color: isActive ? 'green' : 'blue' })}
+            to="proyecto1/2"
+          >
+            Proyecto 2
+          </NavLink>
         </li>
       </ul>
 
