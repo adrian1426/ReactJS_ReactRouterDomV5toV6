@@ -22,6 +22,7 @@ function App() {
           <Route path="/" element={<Redirect to="/home" />} />
           <Route path="/home" element={<h1>Home</h1>} />
           <Route path="/portafolio/*" element={<Portafolio />} />
+          <Route path="*" element={<h1>404: Ruta no encontrada</h1>} />
         </Routes>
       </section>
     </div>
