@@ -1,7 +1,15 @@
 import { NavLink, Route, Routes } from "react-router-dom";
 import Proyecto from "./Proyecto";
+import Redirect from "./Redirect";
 
 const Portafolio = () => {
+
+  const loggedIn = false;
+
+  if (!loggedIn) {
+    return <Redirect push to="/home" />
+  }
+
   return (
     <div>
       <h1>Protafolio component</h1>

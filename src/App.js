@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import Portafolio from './components/Portafolio';
+import Redirect from './components/Redirect';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
 
       <section>
         <Routes>
-          <Route path="/" element={<h1>Inicio</h1>} />
+          <Route path="/" element={<Redirect to="/home" />} />
+          <Route path="/home" element={<h1>Home</h1>} />
           <Route path="/portafolio/*" element={<Portafolio />} />
         </Routes>
       </section>
