@@ -1,11 +1,16 @@
-import { Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import Portafolio from './components/Portafolio';
 import Redirect from './components/Redirect';
 
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
+
 function App() {
   const history = useNavigate();
+  const location = useQuery();
 
-  console.log(history);
+  console.log(location.get('edad'));
 
   const forward = () => {
     history(1);
