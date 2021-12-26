@@ -4,7 +4,7 @@ import Redirect from "./Redirect";
 
 const Portafolio = () => {
 
-  const loggedIn = false;
+  const loggedIn = true;
 
   if (!loggedIn) {
     return <Redirect push to="/home" />

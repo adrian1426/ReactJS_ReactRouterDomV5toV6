@@ -1,8 +1,24 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Portafolio from './components/Portafolio';
 import Redirect from './components/Redirect';
 
 function App() {
+  const history = useNavigate();
+
+  console.log(history);
+
+  const forward = () => {
+    history(1);
+  };
+
+  const back = () => {
+    history(-1);
+  };
+
+  const push = (url) => {
+    history(url);
+  };
+
   return (
     <div >
       <nav>
@@ -18,6 +34,9 @@ function App() {
       </nav>
 
       <section>
+        <button onClick={back}>Back</button>
+        <button onClick={forward}>Forward</button>
+        <button onClick={() => push('/chanchitofeliz')}>Push</button>
         <Routes>
           <Route path="/" element={<Redirect to="/home" />} />
           <Route path="/home" element={<h1>Home</h1>} />
